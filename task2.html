@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>Task 2</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+    
+            .container {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                max-width: 400px;
+                margin: 50px auto;
+                padding: 20px;
+            }
+    
+            label, input, button, p {
+                margin-bottom: 10px;
+                /* margin-top:100px ; */
+            }
+    
+            input {
+                width: 15%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+    
+            button {
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+    
+            button:hover {
+                background-color: #0056b3;
+            }
+    
+            #demo {
+                font-weight: bold;
+                font-size: 18px;
+            }
+        </style>
+    </head>
+    <body>
+        <label>Enter your marks:</label><br>
+        <input type="number" id="number" name="number" onchange="checkNumber()" min="1" max="100"><br><br>
+        <button onclick="myfun()">Check Result</button>
+        <p id="demo"></p>
+
+        <script>
+            function checkNumber() {
+    var inputElement = document.getElementById("number");
+    var inputValue = inputElement.value;
+    
+    if (inputValue > 100) {
+        alert("Number cannot be over 100!");
+        // Optionally, you can reset the value to 100 or do other actions.
+        inputElement.value = 0;
+    }
+}
+
+             function myfun(){
+            var num = document.getElementById('number').value;
+            // console.log(num);
+            if(num >= 80 && num <= 100){
+                document.getElementById('demo').innerHTML = "A Grade";
+            }else if(num >=75 && num <=80){
+                document.getElementById('demo').innerHTML = "B+ Grade";
+
+            }else if(num >=70 && num <=75){
+                document.getElementById('demo').innerHTML = "B Grade";
+
+            }else if(num >=65 && num <=70){
+                document.getElementById('demo').innerHTML = "C+ Grade";
+
+            }else if(num >=60 && num <=65){
+                document.getElementById('demo').innerHTML = "C Grade";
+
+            }else if(num < 60 && num >= 50){
+                document.getElementById('demo').innerHTML = "D Grade";
+
+            }else if(num < 50){
+                document.getElementById('demo').innerHTML = "Sorry you are Fail.";
+
+            }else{
+                document.getElementById('demo').innerHTML = "Enter the number between 1 - 100";
+                alert('Invalid Input');
+            }
+
+           }
+        </script>
+    </body>
+</html>
