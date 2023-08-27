@@ -48,12 +48,19 @@
                 font-weight: bold;
                 font-size: 18px;
             }
+            .grade_a{color: green;}
+            .grade_bplus{color: blue;}
+            .grade_b{color: purple;}
+            .grade_cplus{color: orange;}
+            .grade_c{color: yellow;}
+            .grade_d{color: brown;}
+            .grade_f{color: red;}
         </style>
     </head>
     <body>
         <label>Enter your marks:</label><br>
         <input type="number" id="number" name="number" onchange="checkNumber()" min="1" max="100"><br><br>
-        <button onclick="myfun()">Check Result</button>
+        <button onclick="myfun()">Check Grade</button>
         <p id="demo"></p>
 
         <script>
@@ -70,26 +77,40 @@
 
              function myfun(){
             var num = document.getElementById('number').value;
+            var gradeElement = document.getElementById('demo');
             // console.log(num);
             if(num >= 80 && num <= 100){
                 document.getElementById('demo').innerHTML = "A Grade";
+                gradeElement.className = "grade_a";
             }else if(num >=75 && num <=80){
                 document.getElementById('demo').innerHTML = "B+ Grade";
+                gradeElement.className = "grade_bplus";
+
 
             }else if(num >=70 && num <=75){
                 document.getElementById('demo').innerHTML = "B Grade";
+                gradeElement.className = "grade_b";
+
 
             }else if(num >=65 && num <=70){
                 document.getElementById('demo').innerHTML = "C+ Grade";
+                gradeElement.className = "grade_cplus";
+
 
             }else if(num >=60 && num <=65){
                 document.getElementById('demo').innerHTML = "C Grade";
+                gradeElement.className = "grade_c";
+
 
             }else if(num < 60 && num >= 50){
                 document.getElementById('demo').innerHTML = "D Grade";
+                gradeElement.className = "grade_d";
+
 
             }else if(num < 50){
                 document.getElementById('demo').innerHTML = "Sorry you are Fail.";
+                gradeElement.className = "grade_f";
+
 
             }else{
                 document.getElementById('demo').innerHTML = "Enter the number between 1 - 100";
