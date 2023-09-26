@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Task 2</title>
+        <meta name="viewport" content="width=device-width, intial-scale = 1">
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -55,6 +56,18 @@
             .grade_c{color: yellow;}
             .grade_d{color: brown;}
             .grade_f{color: red;}
+            @media (max-width: 620px){
+                input{
+                    width:60%;
+                }
+                label{
+                    font-size: 8vw;
+                }
+                button{
+                    width:30%;
+                }
+
+            }
         </style>
     </head>
     <body>
@@ -116,7 +129,11 @@
                 document.getElementById('demo').innerHTML = "Enter the number between 1 - 100";
                 alert('Invalid Input');
             }
+            reset();
 
+           }
+           function reset(){
+            document.getElementById ('number').value ="";
            }
         </script>
     </body>
